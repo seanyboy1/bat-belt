@@ -47,3 +47,10 @@ Try to complete as many as you can. Aim for the Bat Belt!
 
 
 If you complete all of those... come talk to me for **Joker Mode**!
+
+## Running the tests
+
+I have provided tests for all of the Alfred exercises. To run them, first `npm install` in the root of the project director. Then run `npm test` to run the tests.
+
+Try to make all the tests pass!
+
