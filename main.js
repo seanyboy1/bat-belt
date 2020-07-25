@@ -1,8 +1,3 @@
-
-// "no operation" aka "no op"
-// This is just an empty function to use as a placeholder.
-const noop = () => {}
-
 const _ = {}
 
 _.each = (array, iteratee) => {

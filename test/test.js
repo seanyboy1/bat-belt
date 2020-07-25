@@ -1,5 +1,5 @@
 import { describe, Try } from 'riteway'
-import exercises from '../solution'
+import exercises from '../main'
 
 describe('each', async assert => {
   const iteratee = (val, i, list) => iterateeArguments.push([val, i, list])
@@ -183,15 +183,46 @@ describe('find', async assert => {
     expected: 16
   })
 
-   assert({
+  assert({
     given: 'array of values where none of them match the predicate',
     should: 'return undefined',
     actual: exercises.find([1,3,5,16], x => x > 20),
     expected: undefined
   })
-
-
 })
 
 
+describe('random', async assert => {
+  const withinBounds = (min, max, x) => x >= min && x <= max
+
+  const results = []
+  for (let i = 0; i < 1000; i++) {
+    results.push(withinBounds(0, 10, exercises.random(0,10)))
+  }
+
+  assert({
+    given: 'a min and a max',
+    should: 'return a random integer between min and max, inclusive',
+    actual: results.filter(inBounds => !inBounds).length,
+    expected: 0
+  })
+
+})
+
+describe('range', async assert => {
+
+  assert({
+    given: 'start, stop',
+    should: 'return a list of integers from start (inclusive) to stop (exclusive)' ,
+    actual: exercises.range(2,10),
+    expected: [2,3,4,5,6,7,8,9]
+  })
+
+  assert({
+    given: 'start, stop, step',
+    should: 'return a list of integers from start (inclusive) to stop (exclusive), incremented (or decremented) by step',
+    actual: exercises.range(0,20,2),
+    expected: [0,2,4,6,8,10,12,14,16,18]
+  })
+})
 
