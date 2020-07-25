@@ -50,7 +50,7 @@ If you complete all of those... come talk to me for **Joker Mode**!
 
 ## Running the tests
 
-I have provided tests for all of the Alfred exercises. To run them, first `npm install` in the root of the project director. Then run `npm test` to run the tests.
+I have provided tests for all of the Alfred exercises. First clone the repo so you have all the files locally. Then run `npm install` in the root of the project directory to install all dependencies. Finally, to run the tests, run `npm test`.
 
 Try to make all the tests pass!
 
